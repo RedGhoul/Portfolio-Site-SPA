@@ -9,11 +9,14 @@ export class Resume extends Component {
   };
   componentDidMount() {
     WorkExperience.Get().then(res => {
+
         this.setState({ Jobs: res.data});
+        
       });
   }
 
   render() {
+    if(this.state.Jobs == null) return (<div>Loading...</div>);
     let main = this.state.Jobs.map((ele, index) => {
       
       let timelinetype;
@@ -24,18 +27,18 @@ export class Resume extends Component {
         timelinetype = "animate-box timeline-unverted";
       }
 
-      let comments = ele.comments.map((com, index) => {
+      let comments = ele.experiencePoints.map((com, index) => {
           return <p key={index}> + {com.value}</p>;
       });
       return (
-        <li className={timelinetype} key={index}>
+        <li className={timelinetype} key={ele.id}>
           <div className="timeline-badge">
             <img alt="clipboard" src={config.clipBoardPNG}></img>
           </div>
           <div className="timeline-panel">
             <div className="timeline-heading">
-              <h3 className="timeline-title">{ele.postion_Name}</h3>
-              <span className="company">{ele.date}</span>
+              <h3 className="timeline-title">{ele.companyName}</h3>
+              <span className="company">{ele.startDate} - {ele.endDate}</span>
             </div>
             <div className="timeline-body">{comments}</div>
           </div>
