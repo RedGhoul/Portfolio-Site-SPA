@@ -19,7 +19,6 @@ export class Work extends React.Component {
 
   render() {
     let main = this.state.Projects.map((ele, index) => {
-      //onsole.log(ele.url);
       let urlLink = null;
       if (ele.url_Live) {
         urlLink = ele.url_Live;

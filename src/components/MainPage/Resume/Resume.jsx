@@ -10,15 +10,15 @@ export class Resume extends Component {
   componentDidMount() {
     WorkExperience.Get().then(res => {
 
-        this.setState({ Jobs: res.data});
-        
-      });
+      this.setState({ Jobs: res.data });
+
+    });
   }
 
   render() {
-    if(this.state.Jobs == null) return (<div>Loading...</div>);
+    if (this.state.Jobs == null) return (<div>Loading...</div>);
     let main = this.state.Jobs.map((ele, index) => {
-      
+
       let timelinetype;
 
       if (index % 2 === 0) {
@@ -28,7 +28,7 @@ export class Resume extends Component {
       }
 
       let comments = ele.experiencePoints.map((com, index) => {
-          return <p key={index}> + {com.value}</p>;
+        return <p key={index}> + {com.value}</p>;
       });
       return (
         <li className={timelinetype} key={ele.id}>
@@ -37,7 +37,7 @@ export class Resume extends Component {
           </div>
           <div className="timeline-panel">
             <div className="timeline-heading">
-              <h3 className="timeline-title">{ele.companyName}</h3>
+              <h3 className="timeline-title">{ele.companyName} - {ele.positionName}</h3>
               <span className="company">{ele.startDate} - {ele.endDate}</span>
             </div>
             <div className="timeline-body">{comments}</div>
@@ -77,10 +77,10 @@ export class Resume extends Component {
                   <div className="timeline-panel">
                     <div className="timeline-heading">
                       <h3 className="timeline-title">
-                       {config.gradMajor}
+                        {config.gradMajor}
                       </h3>
                       <span className="company" style={{ color: "black" }}>
-                       {config.gradInfo}
+                        {config.gradInfo}
                       </span>
                     </div>
                   </div>
