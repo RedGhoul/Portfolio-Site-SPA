@@ -20,10 +20,10 @@ export class Work extends React.Component {
   render() {
     let main = this.state.Projects.map((ele, index) => {
       let urlLink = null;
-      if (ele.url_Live) {
-        urlLink = ele.url_Live;
+      if (ele.liveUrl) {
+        urlLink = ele.liveUrl;
       } else {
-        urlLink = ele.url_Github;
+        urlLink = ele.gitHubURL;
       }
       return (
         <div
@@ -43,7 +43,7 @@ export class Work extends React.Component {
           >
             <div className="desc">
               <h3>{ele.name}</h3>
-              <span>{ele.tag_Line}</span>
+              <span>{ele.tagLine}</span>
             </div>
           </div>
         </div>
