@@ -20,12 +20,20 @@ export class Skills extends Component {
                         <div style={{ paddingTop: "5px" }} className="col-md-3 col-sm-6 col-xs-12 text-center">
                             - SQL (MySql, SqlServer (TSQL))
                         </div>
-
                         <div style={{ paddingTop: "5px" }} className="col-md-3 col-sm-6 col-xs-12 text-center">
                             - React (Functional Components)
                         </div>
                         <div style={{ paddingTop: "5px" }} className="col-md-3 col-sm-6 col-xs-12 text-center">
+                            - React Native
+                        </div>
+                        <div style={{ paddingTop: "5px" }} className="col-md-3 col-sm-6 col-xs-12 text-center">
+                            - Electron (Desktop Development)
+                        </div>
+                        <div style={{ paddingTop: "5px" }} className="col-md-3 col-sm-6 col-xs-12 text-center">
                             - Angular (6+)
+                        </div>
+                        <div style={{ paddingTop: "5px" }} className="col-md-3 col-sm-6 col-xs-12 text-center">
+                            - Unity (Game Engine)
                         </div>
                     </div>
                 </div>
