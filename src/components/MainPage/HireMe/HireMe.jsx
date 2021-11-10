@@ -7,8 +7,14 @@ class HireMe extends Component {
                 <div className="container">
                     <div className="col-md-8 col-md-offset-2 text-center">
                         <h2 style={{ color: 'black', fontSize: 'xx-large' }}>Lets get build something together</h2>
-                        <p style={{ fontSize: 'large', color: 'black' }}>You can contact me using:</p>
-                        <p style={{ fontSize: 'large', color: 'black' }}>avaneesab5@gmail.com</p>
+                        <a rel="noopener noreferrer" target="_blank" class="btn-contact" style={{
+                            background: 'rgba(255, 144, 0, 0.9)',
+                            padding: '5px',
+                            color: 'white',
+                            height: '50px',
+                            width: '70px',
+                            cursor: 'pointer'
+                        }} href="mailto:avaneesab5@gmail.com">Get In Touch</a>
                     </div>
                 </div>
             </div>
