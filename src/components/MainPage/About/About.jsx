@@ -18,7 +18,7 @@ export class About extends Component {
                                 <p>I like to build things and see them come alive. I have always been curious, and interested in all things
                                     mechanical, electrical, and software related. As a kid much to my parent's dismay I destroyed every toy I had, by
                                     opening it up to see how it worked. I carry this sense of curiosity and need for understanding into everything I
-						            do.</p>
+                                    do.</p>
                             </div>
                         </div>
                     </div>

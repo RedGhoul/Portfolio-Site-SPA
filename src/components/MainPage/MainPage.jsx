@@ -34,9 +34,7 @@ export class MainPage extends Component {
                 <ScrollAnimation animateIn="fadeIn" duration={2}>
                     <Skills />
                 </ScrollAnimation>
-                <ScrollAnimation animateIn="fadeIn" duration={2}>
-                    <HireMe />
-                </ScrollAnimation>
+                <HireMe />
                 <Footer></Footer>
             </div>
         )
