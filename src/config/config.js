@@ -1,7 +1,7 @@
-export default {
+const appConfig = {
     notifyMSG: "Scroll Down Below To See some of the stuff I have been working on",
     notifyMSGTimeOut: 3000000,
-    baseURL: "https://portfolio.experimentsinthedeep3.com/",
+    baseURL: "http://localhost:8080/",
     picSumBaseURL: "https://picsum.photos/id/",
     twitterIcon: "https://img.icons8.com/ios-glyphs/50/ffffff/twitter.png",
     linkedinIcon: "https://img.icons8.com/ios/48/ffffff/linkedin-filled.png",
@@ -15,3 +15,4 @@ export default {
     gitHubLink: "https://github.com/RedGhoul",
     blogLink: "https://www.somethingsblog.com/",
 }
+export default appConfig;

@@ -1,37 +1,30 @@
 import React from "react";
-import Project from '../../../api/Project';
+import getProject from '../../../api/Project';
 import config from '../../../config/config';
 import "./Projects.css";
 export class Work extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       Projects: []
     };
   }
 
   componentDidMount() {
-    Project.Get().then(res => {
+    getProject().then(res => {
       this.setState({ Projects: res.data });
     });
   }
 
   render() {
     let main = this.state.Projects.map((ele, index) => {
-      let urlLink = null;
-      if (ele.liveUrl) {
-        urlLink = ele.liveUrl;
-      } else {
-        urlLink = ele.gitHubURL;
-      }
       return (
         <div
           className="col-md-3 text-center col-padding animate-box"
           key={index}
         >
           <div
-            onClick={() => window.open(urlLink, "_blank")}
+            onClick={() => window.open(ele.liveURL ? ele.liveURL : ele.gitHubURL, "_blank")}
             className="work"
             style={{
               backgroundImage: `url(${config.picSumBaseURL +

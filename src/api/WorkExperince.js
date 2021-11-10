@@ -6,6 +6,4 @@ const Get = () => {
     return axios.get(config.baseURL + "api/experiences/public");
 };
 
-export default {
-    Get,
-};
+export default Get;

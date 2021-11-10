@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import MainPage from "./components/MainPage/MainPage";
 import "./App.css";
-function App(props) {
+
+const App = () => {
   return <MainPage></MainPage>
 }
 

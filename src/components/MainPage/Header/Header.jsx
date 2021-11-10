@@ -2,8 +2,27 @@ import React, { Component } from "react";
 import "./Header.css";
 import config from '../../../config/config';
 import image from '../../../background.jpg'
+import Blogs from '../../../api/Blog';
+
 export class Header extends Component {
+  state = {
+    Blogs: []
+  };
+  componentDidMount() {
+    Blogs().then(res => {
+      this.setState({ Blogs: res.data });
+    });
+  }
   render() {
+    if (this.state.Blogs == null) return (<div>Loading...</div>);
+
+    let blogs = this.state.Blogs.map((blog, index) => {
+      return (
+        <h3 style={{ color: "white", fontSize: "35px" }}>
+          <a key={index} href={blog.link}> + {blog.title.rendered}</a>
+        </h3>
+      );
+    });
     return (
       <header
         style={{
@@ -55,6 +74,8 @@ export class Header extends Component {
                       My Blog
                     </a>
                   </h3>
+                  <h3>Latest Blog Posts</h3>
+                  {blogs}
                 </div>
               </div>
             </div>

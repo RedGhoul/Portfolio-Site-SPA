@@ -1,44 +1,34 @@
 import React, { Component } from "react";
-import WorkExperience from '../../../api/WorkExperince';
+import getWorkExperience from '../../../api/WorkExperince';
 import config from '../../../config/config';
 import "./Resume.css";
 
 export class Resume extends Component {
   state = {
-    Jobs: []
+    WorkExperiences: []
   };
   componentDidMount() {
-    WorkExperience.Get().then(res => {
-
-      this.setState({ Jobs: res.data });
-
+    getWorkExperience().then(res => {
+      this.setState({ WorkExperiences: res.data });
     });
   }
 
   render() {
-    if (this.state.Jobs == null) return (<div>Loading...</div>);
-    let main = this.state.Jobs.map((ele, index) => {
-
-      let timelinetype;
-
-      if (index % 2 === 0) {
-        timelinetype = "timeline-inverted animate-box";
-      } else {
-        timelinetype = "animate-box timeline-unverted";
-      }
-
+    if (this.state.WorkExperiences == null) return (<div>Loading...</div>);
+    let main = this.state.WorkExperiences.map((ele, index) => {
       let comments = ele.experiencePoints.map((com, index) => {
-        return <p key={index}> + {com.value}</p>;
+        return <p key={index}> + {com.description}</p>;
       });
       return (
-        <li className={timelinetype} key={ele.id}>
+        <li className={index % 2 === 0 ?
+          "timeline-inverted animate-box" : "animate-box timeline-unverted"} key={index}>
           <div className="timeline-badge">
             <img alt="clipboard" src={config.clipBoardPNG}></img>
           </div>
           <div className="timeline-panel">
             <div className="timeline-heading">
               <h3 className="timeline-title">{ele.companyName} - {ele.positionName}</h3>
-              <span className="company">{ele.startDate} - {ele.endDate}</span>
+              <span className="company">{ele.startDate} - {ele.isPresent ? "Present" : ele.endDate}</span>
             </div>
             <div className="timeline-body">{comments}</div>
           </div>
