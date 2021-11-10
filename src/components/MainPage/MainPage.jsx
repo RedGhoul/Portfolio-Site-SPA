@@ -6,6 +6,7 @@ import About from './About/About';
 import Resume from './Resume/Resume';
 import Projects from './Projects/Projects';
 import Skills from './Skills/Skills';
+import HireMe from './HireMe/HireMe';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import config from '../../config/config';
@@ -32,6 +33,9 @@ export class MainPage extends Component {
                 </ScrollAnimation>
                 <ScrollAnimation animateIn="fadeIn" duration={2}>
                     <Skills />
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="fadeIn" duration={2}>
+                    <HireMe />
                 </ScrollAnimation>
                 <Footer></Footer>
             </div>

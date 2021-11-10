@@ -16,11 +16,11 @@ export class Header extends Component {
   render() {
     if (this.state.Blogs == null) return (<div>Loading...</div>);
 
-    let blogs = this.state.Blogs.map((blog, index) => {
+    let blogs = this.state.Blogs.slice(0, 6).map((blog, index) => {
       return (
-        <h3 style={{ color: "white", fontSize: "35px" }}>
-          <a key={index} href={blog.link}> + {blog.title.rendered}</a>
-        </h3>
+        <a style={{ color: "white", fontSize: "20px", paddingTop: "5px" }} key={index} href={blog.link}>
+          {`< ${blog.title.rendered} >`}
+        </a>
       );
     });
     return (
@@ -65,16 +65,17 @@ export class Header extends Component {
                       <img alt="github" src={config.githubIcon}></img>
                     </a>
                   </div>
-                  <h3>
+                  <h3 style={{ paddingTop: "20px" }}>
                     <a
                       href={config.blogLink}
                       target="_blank" rel="noopener noreferrer"
-                      style={{ color: "white", fontSize: "35px" }}
+                      style={{ color: "white", fontSize: "25px" }}
                     >
                       My Blog
                     </a>
+
                   </h3>
-                  <h3>Latest Blog Posts</h3>
+                  <h3 style={{ paddingTop: "10px", fontSize: "20px" }}>Latest Blog Posts</h3>
                   {blogs}
                 </div>
               </div>
