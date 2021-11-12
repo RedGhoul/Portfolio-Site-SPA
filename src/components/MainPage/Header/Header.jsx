@@ -18,9 +18,9 @@ export class Header extends Component {
 
     let blogs = this.state.Blogs.slice(0, 6).map((blog, index) => {
       return (
-        <a style={{ color: "white", fontSize: "20px", paddingTop: "5px" }} key={index} href={blog.link}>
+        <li style={{ listStyle: "none" }}><a style={{ color: "white", fontSize: "20px", paddingTop: "5px" }} key={index} href={blog.link}>
           {`< ${blog.title.rendered} >`}
-        </a>
+        </a></li>
       );
     });
     return (
@@ -75,7 +75,7 @@ export class Header extends Component {
                     </a>
 
                   </h3>
-                  <h3 style={{ paddingTop: "10px", fontSize: "20px" }}>Latest Blog Posts</h3>
+                  <h3 style={{ paddingBottom: "10px", paddingTop: "10px", fontSize: "20px" }}>Latest Blog Posts</h3>
                   {blogs}
                 </div>
               </div>
