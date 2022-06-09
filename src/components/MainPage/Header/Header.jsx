@@ -11,18 +11,19 @@ export class Header extends Component {
   componentDidMount() {
     Blogs().then(res => {
       this.setState({ Blogs: res.data });
+    }).catch(() => {
+      this.setState({ Blogs: [] });
     });
   }
   render() {
-    if (this.state.Blogs == null) return (<div>Loading...</div>);
 
-    let blogs = this.state.Blogs.slice(0, 6).map((blog, index) => {
+    let blogs = this.state !== [] ? this.state.Blogs.slice(0, 6).map((blog, index) => {
       return (
         <li style={{ listStyle: "none" }}><a style={{ color: "white", fontSize: "20px", paddingTop: "5px" }} key={index} href={blog.link}>
           {`< ${blog.title.rendered} >`}
         </a></li>
       );
-    });
+    }) : '';
     return (
       <header
         style={{

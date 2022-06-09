@@ -3,11 +3,11 @@ import './HireMe.css'
 class HireMe extends Component {
     render() {
         return (
-            <div id="fh5co-started" class="animate-box" style={{ background: 'white', color: 'black' }}>
+            <div id="fh5co-started" className="animate-box" style={{ background: 'white', color: 'black' }}>
                 <div className="container">
                     <div className="col-md-8 col-md-offset-2 text-center">
                         <h2 style={{ color: 'black', fontSize: 'xx-large' }}>Lets get build something together</h2>
-                        <a rel="noopener noreferrer" target="_blank" class="btn-contact" style={{
+                        <a rel="noopener noreferrer" target="_blank" className="btn-contact" style={{
                             background: 'rgba(255, 144, 0, 0.9)',
                             padding: '5px',
                             color: 'white',
