@@ -1,7 +1,7 @@
 const appConfig = {
     notifyMSG: "Scroll Down Below To See some of the stuff I have been working on",
     notifyMSGTimeOut: 3000000,
-    baseURL: "https://portfolio.experimentsinthedeep3.com/",
+    baseURL: "https://portfolio-api.experimentsinthedeep3.com/",
     picSumBaseURL: "https://picsum.photos/id/",
     twitterIcon: "https://img.icons8.com/ios-glyphs/50/ffffff/twitter.png",
     linkedinIcon: "https://img.icons8.com/ios/48/ffffff/linkedin-filled.png",
